@@ -1,11 +1,15 @@
 package models;
 
 import driverpackage.PageDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.ByteArrayInputStream;
+
+import static driverpackage.PageDriver.getCurrentDriver;
 import static driverpackage.PageDriver.getDriver;
 
 public class CommonMethods {
@@ -71,8 +75,10 @@ public class CommonMethods {
         // js.executeScript("arguments[0].click();" ,el);
         js.executeScript(script + ".click();");
     }
+    public void hover(By element){
+        WebElement btn= PageDriver.getCurrentDriver().findElement(element);
+        Actions actions=new Actions(PageDriver.getCurrentDriver());
+        actions.clickAndHold(btn).build().perform();
 
-//    public void addScreenshot(String name){
-//        Allure.addAttachment(name, new ByteArrayInputStream (((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.BYTES)));
-//    }
+    }
 }

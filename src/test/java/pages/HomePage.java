@@ -10,7 +10,7 @@ public class HomePage extends CommonMethods {
     TimeOut time=new TimeOut();
 
     public void loadHomePage(){
-        loadAnWebPage(lc.pageURL);
+        loadAnWebPage(lc.homePageURL);
     }
     @Step("Collect actual current page URL")
     public String getCurrentUrl() {
@@ -27,7 +27,7 @@ public class HomePage extends CommonMethods {
     public void closePopupBannaer() {
         time.timeOut(5000);
         try {
-            clickOnAButtonJs(lc.hompagePopupBannarJs);
+            clickOnElement(lc.homePagePopupBannerClose);
         } catch (Exception e) {
             System.out.println("Pop up is not present");
         }
