@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.ByteArrayInputStream;
+import java.util.List;
 
 import static driverpackage.PageDriver.getCurrentDriver;
 import static driverpackage.PageDriver.getDriver;
@@ -81,4 +82,33 @@ public class CommonMethods {
         actions.clickAndHold(btn).build().perform();
 
     }
+    public String getText(By element) {
+        return PageDriver.getCurrentDriver().findElement(element).getText();
+    }
+    public void highlighter(By element) {
+        WebElement el = PageDriver.getCurrentDriver().findElement(element);
+        JavascriptExecutor js = (JavascriptExecutor) PageDriver.getCurrentDriver();
+        js.executeScript("arguments[0].setAttribute('style','border:2px solid red;background: beige');", el);
+
+    }
+    public void clickOnButton(By btn) {
+        PageDriver.getCurrentDriver().findElement(btn).click();
+    }
+
+    public void scrollToElement(By element){
+        WebElement btn = PageDriver.getCurrentDriver().findElement(element);
+        Actions actions = new Actions(PageDriver.getCurrentDriver());
+        actions.scrollToElement(btn).build().perform();
+    }
+
+    public void listitem(By element, String visibleText) {
+        List<WebElement> listItems = PageDriver.getCurrentDriver().findElements(element);
+        for (WebElement item : listItems) {
+            if (item.getText().equals(visibleText)) {
+                item.click();
+                break;
+            }
+        }
+    }
+
 }

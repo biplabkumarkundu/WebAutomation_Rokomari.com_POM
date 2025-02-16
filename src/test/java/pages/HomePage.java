@@ -12,7 +12,7 @@ public class HomePage extends CommonMethods {
     public void loadHomePage(){
         loadAnWebPage(lc.homePageURL);
     }
-    @Step("Collect actual current page URL")
+    @Step(value = "Collect actual current page URL")
     public String getCurrentUrl() {
         return getLoadedPageUrl();
 

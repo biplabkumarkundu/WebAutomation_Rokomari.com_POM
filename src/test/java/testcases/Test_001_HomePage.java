@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
+import java.io.IOException;
+
 public class Test_001_HomePage extends BaseDriver {
     HomePage homePage = new HomePage();
    TimeOut time = new TimeOut();
@@ -16,8 +18,8 @@ public class Test_001_HomePage extends BaseDriver {
 TakeScreenshot screenshot=new TakeScreenshot();
 
     @Test(description = "Open Rokomari.com Website and perform Testing")
-    @Description("Test Description: Tins test will wait to completely load the home page of Rokomari" + "then perform testing & take a screenshot.")
-    public void homePageTest() throws InterruptedException {
+    @Description("Test Description: Tins test will wait to completely load the home page of Rokomari\n" + "Then perform testing & take a screenshot.")
+    public void homePageTest() {
         homePage.loadAnWebPage(lc.homePageURL);
         time.waitForPageLoad();
         Assert.assertEquals(homePage.getCurrentUrl(),lc.homePageURL);
