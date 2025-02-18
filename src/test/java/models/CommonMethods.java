@@ -72,8 +72,6 @@ public class CommonMethods {
     }
     public void clickOnAButtonJs(String script) {
         JavascriptExecutor js = (JavascriptExecutor) PageDriver.getCurrentDriver();
-        // WebElement el = (WebElement)(js.executeScript("return "+ script));
-        // js.executeScript("arguments[0].click();" ,el);
         js.executeScript(script + ".click();");
     }
     public void hover(By element){
