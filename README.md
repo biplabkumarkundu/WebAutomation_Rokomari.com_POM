@@ -29,7 +29,7 @@
 - Perform testing 
 - Take a screenshot 
 
-### TestCase 02: Test_002_SignUpWithGoogle
+### TestCase 02: Test_002_SignUpPage
 
 - Hover on Sign In button
 - click on Sign In button
@@ -58,7 +58,7 @@
 
 - Click on Go to Shipping Page Button
 - Wait for Complete Pageload
-- Fill up forms wih with name & phone number
+- Fill up forms with with name & phone number
 - Select খাগড়াছড়ি from drop-down as a City
 - Select দীঘিনালা from drop-down as an Area
 - Select বাবুছড়া ইউনিয়ন from drop-down as a Zone
@@ -87,16 +87,4 @@
 ## Authors
 
 - [@biplabkumarkundu](https://github.com/biplabkumarkundu/)
-
-
-
-
-
-
-
-
-## abcd
-## Documentation
-
-[Documentation](https://linktodocumentation)
-
+- 
