@@ -25,10 +25,12 @@ public class ProductsPage extends CommonMethods {
     public By nextPageIcon=By.xpath("//i[@class='ion-chevron-right']");
     public By currentpageNumber = By.cssSelector(".current");
 
-    public By addToCartItem=By.xpath("//div[@title='হিমু হুমায়ূন আহমেদ']");
-    public By addToCartButton=By.xpath("//body[1]/div[8]/div[1]/div[1]/div[1]/section[3]/div[2]/div[1]/div[4]/div[1]/a[1]/div[1]/div[3]/button[1]");
+    public By addToCartItem=By.xpath("//div[@title='শঙ্খনীল কারাগার হুমায়ূন আহমেদ']");
+    public By addToCartButton=By.xpath("//div[@title='শঙ্খনীল কারাগার হুমায়ূন আহমেদ']//div[1]//div[3]//button[1]");
+
     TimeOut time=new TimeOut();
     HomePage homePage=new HomePage();
+
     @Step("Close home page popup banner")
     public void closePopupBannaer() {
         time.timeOut(5000);

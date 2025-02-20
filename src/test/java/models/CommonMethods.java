@@ -32,7 +32,6 @@ public class CommonMethods {
         getElement(locator).sendKeys(text);
     }
     public void  selectOnElement(By locator,String value){
-        getElement(locator).click();
         WebElement selectElement=getElement(locator);
         Select select=new Select(selectElement);
         select.selectByVisibleText(value);
@@ -55,11 +54,6 @@ public class CommonMethods {
     public String getLoadedPageUrl(){
 
         return getDriver().getCurrentUrl();
-    }
-
-    public String getLoadedPageTitle(){
-
-        return getDriver().getTitle();
     }
 
     public Boolean is_element_visible(By locator){
@@ -107,6 +101,12 @@ public class CommonMethods {
                 break;
             }
         }
+    }
+    public void switchToIframebyID(String frame_id){
+        getCurrentDriver().switchTo().frame(frame_id);
+    }
+    public void switchToIframeByWebelement(By element){
+        getCurrentDriver().switchTo().frame((WebElement) element);
     }
 
 }
