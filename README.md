@@ -1,5 +1,5 @@
 # Rokomari.com Automation using using Page object Model
-# [Live Allure Report](https://rokomari-report-arfoysal.netlify.app/)
+# [Live Allure Report](http://192.168.0.107:13088/index.html#)
 
 ## Technology used
   
@@ -43,7 +43,7 @@
 - Fileter Category by selecting সমকালীন উপন্যাস and রচনা সংকলন ও সমগ্র
 - Scroll down and click on next to move to next page 
 - Wait for Complete Pageload
-- Select the fourth book on the page to add-to-card
+- Select any book on the page to add-to-card
 - Perform testing
 - Take screenshot
 
@@ -56,7 +56,7 @@
 
 ### TestCase 05: Test_005_ShippingPage
 
-- Click on Go to Shipping Page Button
+- Click on Proceed to Checkout Button
 - Wait for Complete Pageload
 - Fill up forms with with name & phone number
 - Select খাগড়াছড়ি from drop-down as a City
@@ -64,7 +64,7 @@
 - Select বাবুছড়া ইউনিয়ন from drop-down as a Zone
 - Provide address text in the text field 
 - Select COD as a payment option
-- Scroll-down & Highlights Confirm Order Button
+- Scroll-down & show Confirm Order Button
 - Perform testing
 - Take Screenshot
 
@@ -72,7 +72,7 @@
 
 - Click on User Name Button
 - Click on User sign Out Button from drop-down 
-- Perform testng
+- Perform testing
 - Take Screenshot
 - Close browser
 
@@ -85,6 +85,7 @@
 
 
 ## Authors
+[@biplabkumarkundu](https://github.com/biplabkumarkundu/)
 
-- [@biplabkumarkundu](https://github.com/biplabkumarkundu/)
-- 
+## Data Driven testing, Iframe, Alert, and so on. Check this project.
+[Othoba.com Automation Using POM](https://github.com/biplabkumarkundu/WebAutomation_Othoba.com_Selenium_TestNG_POM_Allure)
