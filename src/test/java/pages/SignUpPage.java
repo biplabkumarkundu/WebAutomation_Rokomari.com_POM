@@ -30,13 +30,13 @@ public class SignUpPage extends CommonMethods {
 
     TimeOut time=new TimeOut();
 
-//    @Step("Sign In with gmail and OTP")
-//    public void signup(){
-//     loadAnWebPage("https://www.rokomari.com/login");
-//        writeOnElement(signInEmail,signInEmailText); //Beacuse we use previous session for login
-//        clickOnElement(signInNext);
-//        time.timeOut(15000);
-//    }
+    @Step("Sign In with gmail and OTP")
+    public void signup(){
+     loadAnWebPage("https://www.rokomari.com/login");
+        writeOnElement(signInEmail,signInEmailText); //Beacuse we use previous session for login
+        clickOnElement(signInNext);
+        time.timeOut(15000);
+    }
     @Step("My Profile Section")
     public void  myProfileSection(){
        loadAnWebPage(profilepage);

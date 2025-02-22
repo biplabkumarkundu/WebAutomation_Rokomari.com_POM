@@ -25,8 +25,8 @@ public class ProductsPage extends CommonMethods {
     public By nextPageIcon=By.xpath("//i[@class='ion-chevron-right']");
     public By currentpageNumber = By.cssSelector(".current");
 
-    public By addToCartItem=By.xpath("//div[@title='শঙ্খনীল কারাগার হুমায়ূন আহমেদ']");
-    public By addToCartButton=By.xpath("//div[@title='শঙ্খনীল কারাগার হুমায়ূন আহমেদ']//div[1]//div[3]//button[1]");
+    public By addToCartItem=By.xpath("//div[@title='এবং হিমু হুমায়ূন আহমেদ']");
+    public By addToCartButton=By.xpath("//div[@title='এবং হিমু হুমায়ূন আহমেদ']//div[1]//div[3]//button[1]");
 
     TimeOut time=new TimeOut();
     HomePage homePage=new HomePage();

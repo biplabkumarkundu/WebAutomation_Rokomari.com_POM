@@ -2,6 +2,7 @@ package pages;
 
 import io.qameta.allure.Step;
 import models.CommonMethods;
+import models.TakeScreenshot;
 import models.TimeOut;
 import org.openqa.selenium.By;
 
@@ -16,7 +17,7 @@ public class ShippingPage extends CommonMethods {
     public String selectCountry_text="Bangladesh";
     public String countryNotSelected="Germany";
     public String selectCity_text="খাগড়াছড়ি";
-    public String selectArea_text="দীঘিনালা ";
+    public String selectArea_text="দীঘিনালা";
     public String selectZone_text="বাবুছড়া ইউনিয়ন";
     public String customerAddress_text="House 49, Road 15, BabuChora Union";
 
@@ -32,6 +33,7 @@ public class ShippingPage extends CommonMethods {
     public By paymentCOD=By.xpath("//label[@for='COD']");
     public By scrollForVisibility=By.xpath("//label[contains(text(),'রকমারির শর্তাবলীতে সম্মতি প্রদান করছি ৷')]");
 
+    TakeScreenshot screenshot=new TakeScreenshot();
     MyCartPage myCartPage=new MyCartPage();
     TimeOut time=new TimeOut();
 
@@ -70,10 +72,21 @@ public class ShippingPage extends CommonMethods {
         time.timeOut();
         writeOnElement(customerAddress,customerAddress_text);
         time.timeOut();
+        screenshot.addScreenshot("Screenshot After porviding information");
         scrollToElement(scrollForVisibility);
         clickOnElement(paymentCOD);
         time.timeOut();
 
     }
+
+    @Step("")
+    public String  fromIputFieldValue(String name,By element){
+        return getAttributeValue(element,"value");
+    }
+    @Step("")
+    public String fromSelectField(String fieldname,By element){
+        return currentlySelectedItem(element);
+    }
+
 
 }

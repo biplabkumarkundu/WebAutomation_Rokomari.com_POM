@@ -21,9 +21,15 @@ public class Test_005_ShippingPage extends BaseDriver {
         Assert.assertTrue(shippingPage.currenPagetUrl().contains(shippingPage.shipppingPageUrl));
         screenshot.addScreenshot("Shipping Page");
         shippingPage.fillUpForm();
-        Assert.assertEquals(shippingPage.getElement(shippingPage.customerName).getText(),shippingPage.customerName_text);
-        Assert.assertEquals(shippingPage.getElement(shippingPage.phoneNumber).getText(),shippingPage.phoneNumber_text);
-
+        Assert.assertEquals(shippingPage.fromIputFieldValue("Customer Name",shippingPage.customerName),shippingPage.customerName_text);
+        Assert.assertEquals(shippingPage.fromIputFieldValue("Phone Number",shippingPage.phoneNumber),shippingPage.phoneNumber_text);
+        //Assert.assertEquals(shippingPage.fromIputFieldValue("Alternative Phone Number",shippingPage.altPhoneNumber),shippingPage.altPhoneNumber_text);
+        Assert.assertEquals(shippingPage.fromSelectField("Country Selected",shippingPage.selectCountry),shippingPage.selectCountry_text);
+        Assert.assertFalse(shippingPage.fromSelectField("Country Not Selected",shippingPage.selectCountry).contains(shippingPage.countryNotSelected));
+        Assert.assertEquals(shippingPage.fromSelectField("City",shippingPage.selectCity),shippingPage.selectCity_text);
+        Assert.assertEquals(shippingPage.fromSelectField("Area",shippingPage.selectArea),shippingPage.selectArea_text);
+        Assert.assertEquals(shippingPage.fromSelectField("Zone",shippingPage.selectZone),shippingPage.selectZone_text);
+        screenshot.addScreenshot("Shipping page after provide requre information");
 
     }
 }

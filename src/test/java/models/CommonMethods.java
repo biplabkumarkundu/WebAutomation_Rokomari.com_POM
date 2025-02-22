@@ -1,13 +1,10 @@
 package models;
 
 import driverpackage.PageDriver;
-import io.qameta.allure.Allure;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.ByteArrayInputStream;
 import java.util.List;
 
 import static driverpackage.PageDriver.getCurrentDriver;
@@ -18,9 +15,9 @@ public class CommonMethods {
 
         return getDriver().findElement(locator);
     }
-    public void getAttribute(By locator,String value){
+    public String getAttributeValue(By locator, String attribute){
 
-        getElement(locator).getAttribute(value);
+        return PageDriver.getCurrentDriver().findElement(locator).getAttribute(attribute);
     }
     public void clickOnElement(By locator){
 
@@ -47,10 +44,6 @@ public class CommonMethods {
         return getDriver().getTitle();
     }
 
-    public void loadAWebPage(String url){
-
-        getDriver().get(url);
-    }
     public String getLoadedPageUrl(){
 
         return getDriver().getCurrentUrl();
@@ -101,6 +94,10 @@ public class CommonMethods {
                 break;
             }
         }
+    }
+    public String currentlySelectedItem(By element){
+        Select select=new Select(PageDriver.getCurrentDriver().findElement(element));
+        return select.getFirstSelectedOption().getText();
     }
     public void switchToIframebyID(String frame_id){
         getCurrentDriver().switchTo().frame(frame_id);

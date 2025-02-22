@@ -24,8 +24,8 @@ public class Test_002_SignUpPage extends BaseDriver {
             + "It will verify every step and save screenshots for future use.")
     public void testSignUpPage()throws IOException {
 
-//        signUpPage.signup(); //comment down due to OTP bypass
-//        time.waitForPageLoad();
+        signUpPage.signup(); //comment down due to OTP bypass
+        time.waitForPageLoad();
         signUpPage.loadAnWebPage("https://www.rokomari.com/my-section/profile");
         time.timeOut(2000);
         Assert.assertFalse(signUpPage.is_element_visible(signUpPage.signInLoginButton));
